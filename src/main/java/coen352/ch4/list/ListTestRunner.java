@@ -1,8 +1,5 @@
 package coen352.ch4.list;
 
-
-
-
 import org.junit.runner.JUnitCore;
 import org.junit.runner.Result;
 import org.junit.runner.notification.Failure;
