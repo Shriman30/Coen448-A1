@@ -24,6 +24,27 @@ class QueueJUnitTest {
 	}
 
 	@Test
+	public void testEmptyAQueue(){
+		// Checks the return value of an empty Aqueue
+		ADTQueue<Integer> AQ = new AQueue<Integer>();
+		assertEquals(AQ.length(),0);
+	}
+
+	@Test
+	public void testAQueueWithMaxSizeOfElements(){
+		// Test makes a new Aqueue from size 0 all the way to size 10 and checks its size every time.
+		// The domain we want to test is between 0 and 10 for Aqueue
+		int k = 10; // This is the max size an Aqueue
+		for (int j = 0; j < k + 1; j++) {
+			ADTQueue<Integer> AQ = new AQueue<Integer>();
+			for (int i = 0; i < j; i++) {
+				AQ.enqueue(1);
+			}
+			assertEquals(j,AQ.length());
+		}
+	}
+
+	@Test
 	public void testGeneral() {
 		int temp;
 		
