@@ -20,7 +20,7 @@ public class AQueue<E> implements ADTQueue<E> {
 	private E[] listArray;       // Array holding queue elements
 	
 	/** Constructors */
-	AQueue() { this(defaultSize); }
+	public AQueue() { this(defaultSize); }
 	@SuppressWarnings("unchecked")  // For generic array
 	public
 	AQueue(int size) {
