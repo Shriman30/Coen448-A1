@@ -37,7 +37,7 @@ class QueueJUnitTest {
 
 	// New test iteration 1million
 
-	// Test enq_T1
+	// Test AEnq_T1
 	@Test
 	public void testForNullInputEnqueue() {
 		ADTQueue<Integer> AQ = new AQueue<Integer>();
@@ -45,7 +45,7 @@ class QueueJUnitTest {
 		assertEquals(null, AQ.frontValue());
 	}
 
-	// Test enq_T2
+	// Test AEnq_T2
 	@Test
 	public void testForNotNullInputEnqueue() {
 		ADTQueue<Integer> AQ = new AQueue<Integer>();
@@ -54,7 +54,7 @@ class QueueJUnitTest {
 		assertEquals("< 22 >", AQ.toString());
 	}
 
-	// Test enq_T3
+	// Test AEnq_T3
 	@Test
 	public void testCurrentPositionInsert() {
 		Q1 = new AQueue<Integer>();
@@ -63,7 +63,7 @@ class QueueJUnitTest {
 		assertEquals(22, Q1.frontValue());
 	}
 
-	// Test enq_T4
+	// Test AEnq_T4
 	@Test
 	public void enqueueToTheRearOfAQueue() {
 		Q1 = new AQueue<Integer>();
@@ -75,7 +75,7 @@ class QueueJUnitTest {
 		assertEquals(expected, actual);
 	}
 
-	// Test enq_T5
+	// Test AEnq_T5
 	@Test
 	public void enqueueAnAQueueWithSpace() {
 		int size = 15;
@@ -89,7 +89,7 @@ class QueueJUnitTest {
 		assertEquals("< 0 1 2 3 4 5 6 7 8 9 10 11 12 99 >", Q1.toString());
 	}
 
-	// Test enq_T6
+	// Test AEnq_T6
 	@Test
 	public void enqueueAnAQueueWithNoSpace() {
 		int size = 15;
@@ -105,7 +105,7 @@ class QueueJUnitTest {
 		assertEquals(expectedMessage, actualMessage);
 	}
 
-	// Test deq_T1
+	// Test ADeqT1
 	@Test
 	public void dequeueANullElementAQueue() {
 		Q1 = new AQueue<Integer>();
@@ -113,7 +113,7 @@ class QueueJUnitTest {
 		assertEquals(null, Q1.dequeue());
 	}
 
-	// Test deq_T2
+	// Test ADeqT2
 	@Test
 	public void dequeueANonNullElementAQueue() {
 		Q1 = new AQueue<Integer>();
@@ -121,7 +121,7 @@ class QueueJUnitTest {
 		assertEquals(22, Q1.dequeue());
 	}
 
-	// Test deq_T3
+	// Test ADeqT3
 	@Test
 	public void dequeueFromEmptyAQueue() {
 		Q1 = new AQueue<Integer>();
@@ -134,7 +134,7 @@ class QueueJUnitTest {
 		assertEquals(expectedMessage, actualMessage);
 	}
 
-	// Test deq_T4
+	// Test ADeqT4
 	@Test 
 	public void dequeueANonEmptyAQueue(){
 		Q1 = new AQueue<Integer>();
@@ -143,6 +143,127 @@ class QueueJUnitTest {
 		assertEquals(1, Q1.dequeue());
 	}
 
+	// Test LEnq_T1
+	@Test
+	public void testForNullInputLEnqueue(){
+		Q1 = new LQueue<Integer>();
+		Q1.enqueue(null);
+		Q1.enqueue(2);
+		assertEquals(null, Q1.frontValue());
+	}
 
+	// Test LEnq_T2 
+	@Test 
+	public void testForNotNullInputLEnqueue(){
+		Q1 = new LQueue<Integer>();
+		Q1.enqueue(55);
+		Q1.enqueue(2);
+		assertEquals(55, Q1.frontValue());
+	}
+
+	// Test LEnq_T3 
+	@Test 
+	public void LEnqueueAtRearOfQueue(){
+		Q1 = new LQueue<Integer>();
+		Q1.enqueue(1);
+		Q1.enqueue(2);
+		Q1.enqueue(3);
+		String expected = "< 1 2 3 >";
+		String actual = Q1.toString();
+		assertEquals(expected, actual);
+	}
+
+	// Test LEnq_T4 
+	@Test 
+	public void LEnqueueNotAtRearOfQueue(){
+		Q1 = new LQueue<Integer>();
+		// Enqueuing front element to queue
+		Q1.enqueue(22);
+		assertEquals(22, Q1.frontValue());
+	}
+
+	// Test LEnq_T5
+	@Test 
+	public void LEnqueueAnLQueueWithSize0(){
+		Q1 = new LQueue<Integer>();
+		assertEquals(0,Q1.length());
+		// Enqueuing front element to queue
+		Q1.enqueue(22);
+		assertEquals(22, Q1.frontValue());
+	}
+
+	// Test LEnq_T6
+	@Test 
+	public void LEnqueueAnLQueueWithSizeGreaterThanQueue(){
+		Q1 = new LQueue<Integer>();
+
+		for (int i = 0; i < 10; i++) {
+			Q1.enqueue(1);
+		}
+		
+		Q1.enqueue(2);
+		
+		assertEquals("< 1 1 1 1 1 1 1 1 1 1 2 >", Q1.toString());
+	}
+	
+	// Test LDeq_T1
+	@Test 
+	public void LDequeueANullElement(){
+		Q1 = new LQueue<Integer>();
+		Q1.enqueue(1);
+		Q1.enqueue(null);
+		Q1.dequeue();
+		assertEquals(null, Q1.dequeue());
+	}
+
+	// Test LDeq_T2
+	@Test 
+	public void LDequeueANotNullElement(){
+		Q1 = new LQueue<Integer>();
+		Q1.enqueue(1);
+		Q1.enqueue(2);
+		Q1.dequeue();
+		assertEquals(2,Q1.dequeue());
+	}
+
+	// Test LDeq_T3
+	@Test 
+	public void LDequeueEmptyQueue(){
+		Q1 = new LQueue<Integer>();
+		Q1.enqueue(1);
+		Q1.enqueue(2);
+		Q1.dequeue();
+		assertEquals(2,Q1.dequeue());
+	}
+
+	// Test LDeq_T4
+	@Test 
+	public void LDequeueLength0(){
+		Q1 = new LQueue<Integer>();
+		AssertionError exception = Assertions.assertThrows(AssertionError.class, () -> Q1.dequeue());
+		assertEquals("Queue is empty",exception.getMessage());
+		assertEquals(0,Q1.length());
+	}
+
+	// Test LDeq_T4
+	@Test 
+	public void LDequeueAnElementSize(){
+		Q1 = new LQueue<Integer>();
+		Q1.enqueue(1);
+		Q1.enqueue(2);
+		Q1.dequeue();
+		assertEquals(1,Q1.length());
+	}
+
+	// Test LDeq_T5
+	@Test 
+	public void LDequeueSizeAsManyAsElements(){
+		Q1 = new LQueue<Integer>();
+		Q1.enqueue(1);
+		Q1.enqueue(2);
+		Q1.enqueue(3);
+		Q1.dequeue();
+		assertEquals(2,Q1.length());
+	}
 
 }
