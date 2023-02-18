@@ -35,7 +35,7 @@ class QueueJUnitTest {
 
 	}
 
-	// New test iteration 1million
+	// Aqueue starts here
 
 	// Test AET1
 	@Test
@@ -191,6 +191,9 @@ class QueueJUnitTest {
 		assertEquals(1, Q1.dequeue());
 	}
 
+
+/// Lqueue class starts here
+
 	// Test LET1
 	@Test
 	public void testForNullInputLEnqueue(){
@@ -312,5 +315,121 @@ class QueueJUnitTest {
 		Q1.dequeue();
 		assertEquals(2,Q1.length());
 	}
+
+	// Dqueue starts here
+
+	// Test DET1
+	@Test 
+	public void DQueueCheckNullQueue(){
+		Q1 = new DQueue<Integer>();
+		Q1.enqueue(null);
+		Q1.enqueue(null);
+		assertEquals("< null null >", Q1.toString());
+	}
+
+	// Test DET2
+	@Test 
+	public void DQueueCheckNotNullQueue(){
+		Q1 = new DQueue<Integer>();
+		Q1.enqueue(1);
+		Q1.enqueue(2);
+		assertNotEquals("< null null >", Q1.toString());
+	}
+
+	// Test DET3
+	@Test 
+	public void DQueueSizeOfQueue0(){
+		Q1 = new DQueue<Integer>();
+		// Q1.enqueue(1);
+		assertEquals(0, Q1.length());
+	}
+
+	// Test DET4
+	@Test 
+	public void DQueueSizeOfQueue(){
+		Q1 = new DQueue<Integer>();
+		Q1.enqueue(1);
+		Q1.enqueue(2);
+		assertEquals(2, Q1.length());
+	}
+
+	// Test DET5
+	@Test
+	public void DQueueNullInput(){
+		Q1 = new DQueue<Integer>();
+		Q1.enqueue(null);
+		assertEquals(null, Q1.frontValue());
+	}
+
+	// Test DET6
+	@Test
+	public void DQueueNotNullInput(){
+		Q1 = new DQueue<Integer>();
+		Q1.enqueue(1);
+		Q1.enqueue(2);
+		assertEquals("< 1 2 >", Q1.toString());
+	}
+
+	// Test DET7
+	@Test 
+	public void positionOfInputStart(){
+		Q1 = new DQueue<Integer>();
+		Q1.enqueue(1);
+		Q1.enqueue(99);
+		String expected = "< 1 99 >";
+		String[] exp = expected.split(" ");
+		String[] act = Q1.toString().split(" ");
+		assertEquals(exp[1], act[1]);
+	}
+
+	// Test DET8
+	@Test 
+	public void positionOfInputRear(){
+		Q1 = new DQueue<Integer>();
+		Q1.enqueue(1);
+		Q1.enqueue(99);
+		String expected = "< 1 99 >";
+		String[] exp = expected.split(" ");
+		String[] act = Q1.toString().split(" ");
+		assertEquals(exp[2], act[2]);
+	}
+
+	// Test DDT1 
+	@Test 
+	public void sizeOfQueueEqual0DQueue(){
+		Q1 = new DQueue<Integer>();
+		Q1.enqueue(1);
+		Q1.dequeue();
+		assertEquals(0, Q1.length());
+	}
+
+	// Test DDT2
+	@Test 
+	public void sizeOfQueueGreaterThan0DQueue(){
+		Q1 = new DQueue<Integer>();
+		for (int i = 0; i < 9; i++) {
+			Q1.enqueue(1);
+		}
+		
+		Q1.dequeue();
+		assertEquals(8, Q1.length());
+	}
+
+	// Test DDT3 
+	@Test 
+	public void dequeueANullelementDQueue(){
+		Q1 = new DQueue<Integer>();
+		Q1.enqueue(null);
+		assertEquals(null, Q1.dequeue());
+	}
+
+	// Test DDT3 
+	@Test 
+	public void dequeueANonNullelementDQueue(){
+		Q1 = new DQueue<Integer>();
+		Q1.enqueue(1);
+		assertEquals(1, Q1.dequeue());
+	}
+	
 
 }
