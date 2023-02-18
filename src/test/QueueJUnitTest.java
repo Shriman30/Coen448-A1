@@ -37,17 +37,18 @@ class QueueJUnitTest {
 	}
 	// ECC combinations
 
-	/* 
+	/*
 	 * Test case ECCAE1
 	 * Tester's name: Jason Hillinger
 	 * Test input data: null , 0, 2, 3, 1
 	 * Test type: functional & interface, whitebox
-	 * Test case description: Tests all types of inserts using enqueue for the AQueue() class.
+	 * Test case description: Tests all types of inserts using enqueue for the
+	 * AQueue() class.
 	 * Expected output: null, 0, True
 	 * Bug Report: N\A
 	 */
 	@Test
-	public void ECCAE1(){
+	public void ECCAE1() {
 		// AET1
 		testForNullInputEnqueue();
 		// AET3
@@ -56,17 +57,18 @@ class QueueJUnitTest {
 		enqueueLessElementsThanMaxSizeAQueue();
 	}
 
-	/* 
+	/*
 	 * Test case ECCAE2
 	 * Tester's name: Shriman Vinayagamoorthy
 	 * Test input data: 22 , 0, 2, 3, 1
 	 * Test type: functional & interface, whitebox
-	 * Test case description: Tests non null inserts using enqueue for the AQueue() class.
+	 * Test case description: Tests non null inserts using enqueue for the AQueue()
+	 * class.
 	 * Expected output: 22, 0, True
 	 * Bug Report: N\A
 	 */
 	@Test
-	public void ECCAE2(){
+	public void ECCAE2() {
 		// AET2
 		testForNotNullInputEnqueue();
 		// AET3
@@ -75,17 +77,18 @@ class QueueJUnitTest {
 		enqueueLessElementsThanMaxSizeAQueue();
 	}
 
-	/* 
+	/*
 	 * Test case ECCAE3
 	 * Tester's name: Jason Hillinger
 	 * Test input data: null , 0,1,2,3,4,5,6,7,8 , 2,3,1
 	 * Test type: functional & interface, blackbox
-	 * Test case description: Tests inserts using enqueue for the AQueue() class to verify proper size of queue.
+	 * Test case description: Tests inserts using enqueue for the AQueue() class to
+	 * verify proper size of queue.
 	 * Expected output: null, "< 0 1 2 3 4 5 6 7 8 >" , True
 	 * Bug Report: N\A
 	 */
 	@Test
-	public void ECCAE3(){
+	public void ECCAE3() {
 		// AET1
 		testForNullInputEnqueue();
 		// AET4
@@ -94,37 +97,39 @@ class QueueJUnitTest {
 		enqueueLessElementsThanMaxSizeAQueue();
 	}
 
-	/* 
+	/*
 	 * Test case ECCAE4
 	 * Tester's name: Shriman Vinayagamoorthy
 	 * Test input data: null , 0,1,2,3,4,5,6,7,8,9,10,11,12,99, 2,3,1,4,7
 	 * Test type: functional & interface, blackbox
-	 * Test case description: Tests null inserts using enqueue for the AQueue() class to verify proper size of queue.
+	 * Test case description: Tests null inserts using enqueue for the AQueue()
+	 * class to verify proper size of queue.
 	 * Expected output: null, "< 0 1 2 3 4 5 6 7 8 9 10 11 12 99 >" , True
 	 * Bug Report: N\A
 	 */
 	@Test
-	public void ECCAE4(){
+	public void ECCAE4() {
 		// AET1
 		testForNullInputEnqueue();
 		// AET5
 		enqueueAnAQueueWithSpace();
 		// AET9
 		enqueueEqualElementsToMaxSizeAQueue();
-		
+
 	}
 
-	/* 
+	/*
 	 * Test case ECCAE5
 	 * Tester's name: Jason Hillinger
 	 * Test input data: 0, null,null, 2,3,1
 	 * Test type: functional & interface, blackbox
-	 * Test case description: Tests null inserts using enqueue for the AQueue() class to verify proper size of queue with proper indexing of queue.
+	 * Test case description: Tests null inserts using enqueue for the AQueue()
+	 * class to verify proper size of queue with proper indexing of queue.
 	 * Expected output: 0, "< null null >", true
 	 * Bug Report: N\A
 	 */
 	@Test
-	public void ECCAE5(){
+	public void ECCAE5() {
 		// AET3
 		testCurrentPositionInsert();
 		// AET7
@@ -133,17 +138,19 @@ class QueueJUnitTest {
 		enqueueLessElementsThanMaxSizeAQueue();
 	}
 
-	/* 
+	/*
 	 * Test case ECCAE6
 	 * Tester's name: Shriman Vinayagamoorthy
 	 * Test input data: 0, null,null,null 2,3,1
 	 * Test type: functional & interface, blackbox
-	 * Test case description: Tests null inserts for String & Integer type using enqueue for the AQueue() class to verify proper size of queue with proper indexing of queue.
+	 * Test case description: Tests null inserts for String & Integer type using
+	 * enqueue for the AQueue() class to verify proper size of queue with proper
+	 * indexing of queue.
 	 * Expected output: 0, "< null null null >", true
 	 * Bug Report: N\A
 	 */
 	@Test
-	public void ECCAE6(){
+	public void ECCAE6() {
 		// AET3
 		testCurrentPositionInsert();
 		// AET6
@@ -152,46 +159,49 @@ class QueueJUnitTest {
 		enqueueLessElementsThanMaxSizeAQueue();
 	}
 
-	/* 
+	/*
 	 * Test case ECCAD1
 	 * Tester's name: Jason Hillinger
 	 * Test input data: null, none
 	 * Test type: functional, blackbox
-	 * Test case description: Test for proper behaviour of dequeuing a null element or dequeing when there is nothing to dequeue.
+	 * Test case description: Test for proper behaviour of dequeuing a null element
+	 * or dequeing when there is nothing to dequeue.
 	 * Expected output: null, "Queue is empty"
 	 * Bug Report: N\A
 	 */
 	@Test
-	public void ECCAD1(){
+	public void ECCAD1() {
 		// ADT1
 		dequeueANullElementAQueue();
 		// ADT3
 		dequeueFromEmptyAQueue();
 	}
 
-	/* 
+	/*
 	 * Test case ECCAD2
 	 * Tester's name: Shriman Vinayagamoorthy
 	 * Test input data: 22, 1,2
 	 * Test type: functional, blackbox
-	 * Test case description: Test for proper behaviour of dequeuing a non null element or dequeing when there is an element to dequeue.
+	 * Test case description: Test for proper behaviour of dequeuing a non null
+	 * element or dequeing when there is an element to dequeue.
 	 * Expected output: 22, 1
 	 * Bug Report: N\A
 	 */
 	@Test
-	public void ECCAD2(){
+	public void ECCAD2() {
 		// ADT2
 		dequeueANonNullElementAQueue();
 		// ADT4
 		dequeueANonEmptyAQueue();
 	}
 
-	/* 
+	/*
 	 * Test case ECCLE1
 	 * Tester's name: Jason Hillinger
 	 * Test input data: null,2, 22
 	 * Test type: interface, blackbox
-	 * Test case description: Checks for null inputs and position of element in queue for an LQueue()
+	 * Test case description: Checks for null inputs and position of element in
+	 * queue for an LQueue()
 	 * Expected output: null, 22
 	 * Bug Report: N\A
 	 */
@@ -203,12 +213,13 @@ class QueueJUnitTest {
 		LEnqueueNotAtRearOfQueue();
 	}
 
-	/* 
+	/*
 	 * Test case ECCLE2
 	 * Tester's name: Shriman Vinayagamoorthy
 	 * Test input data: 22, 22
 	 * Test type: interface, blackbox
-	 * Test case description: Test for proper behaviour enqueueing an element to an queue with size 0. Checks if element is in proper position.
+	 * Test case description: Test for proper behaviour enqueueing an element to an
+	 * queue with size 0. Checks if element is in proper position.
 	 * Expected output: 22, 0,22
 	 * Bug Report: N\A
 	 */
@@ -220,12 +231,13 @@ class QueueJUnitTest {
 		LEnqueueAnLQueueWithSize0();
 	}
 
-	/* 
+	/*
 	 * Test case ECCLE3
 	 * Tester's name: Jason Hillinger
 	 * Test input data: null,2, 1,1
 	 * Test type: interface, blackbox
-	 * Test case description: Test for proper behaviour of enqueuing a null and non null element to LQueue()
+	 * Test case description: Test for proper behaviour of enqueuing a null and non
+	 * null element to LQueue()
 	 * Expected output: null, "< 1 1 >"
 	 * Bug Report: N\A
 	 */
@@ -237,12 +249,13 @@ class QueueJUnitTest {
 		LEnqueueQueueisNotNull();
 	}
 
-	/* 
+	/*
 	 * Test case ECCLE4
 	 * Tester's name: Shriman Vinayagamoorthy
 	 * Test input data: 22, 1,2
 	 * Test type: interface, blackbox
-	 * Test case description: Test for proper behaviour of dequeuing a non null element or dequeing when there is an element to dequeue.
+	 * Test case description: Test for proper behaviour of dequeuing a non null
+	 * element or dequeing when there is an element to dequeue.
 	 * Expected output: 22, 1
 	 * Bug Report: N\A
 	 */
@@ -254,12 +267,13 @@ class QueueJUnitTest {
 		LEnqueueAnLQueueWithSizeGreaterThanQueue();
 	}
 
-	/* 
+	/*
 	 * Test case ECCLE5
 	 * Tester's name: Jason Hillinger
 	 * Test input data: 55,2, null,null
 	 * Test type: interface, blackbox
-	 * Test case description: Test for proper behaviour of the actual queue when enqueing null and non null elements
+	 * Test case description: Test for proper behaviour of the actual queue when
+	 * enqueing null and non null elements
 	 * Expected output: 55, "< null null >"
 	 * Bug Report: N\A
 	 */
@@ -271,12 +285,14 @@ class QueueJUnitTest {
 		LEnqueueQueueisNull();
 	}
 
-	/* 
+	/*
 	 * Test case ECCLD1
 	 * Tester's name: Shriman Vinayagamoorthy
 	 * Test input data: none, 1
 	 * Test type: functional & interface, blackbox
-	 * Test case description: Checks for LQueue() dequeing an element when there is no element to dequeue, while verifying the size of the queue. Then enqueues element then dequeus element and verifies size of queue to be 0
+	 * Test case description: Checks for LQueue() dequeing an element when there is
+	 * no element to dequeue, while verifying the size of the queue. Then enqueues
+	 * element then dequeus element and verifies size of queue to be 0
 	 * Expected output: "Queue is empty",0, 0
 	 * Bug Report: N\A
 	 */
@@ -288,12 +304,13 @@ class QueueJUnitTest {
 		LDequeueQueueSize0();
 	}
 
-	/* 
+	/*
 	 * Test case ECCLD2
 	 * Tester's name: Jason Hillinger
 	 * Test input data: 1,2, 1,2,3
 	 * Test type: functional & interface, blackbox
-	 * Test case description: Verifies the length of a LQueue after dequeueing an element with different sizes of length of elements
+	 * Test case description: Verifies the length of a LQueue after dequeueing an
+	 * element with different sizes of length of elements
 	 * Expected output: 1, 2
 	 * Bug Report: N\A
 	 */
@@ -304,8 +321,8 @@ class QueueJUnitTest {
 		// LDT4
 		LDequeueSizeAsManyAsElements();
 	}
-	
-	/* 
+
+	/*
 	 * Test case ECCDE1
 	 * Tester's name: Shriman Vinayagamoorthy
 	 * Test input data: null,null, 1,2
@@ -322,12 +339,13 @@ class QueueJUnitTest {
 		DQueueNotNullInput();
 	}
 
-	/* 
+	/*
 	 * Test case ECCDE2
 	 * Tester's name: Jason Hillinger
 	 * Test input data: 1,2, null,null
 	 * Test type: interface, whitebox
-	 * Test case description: Verifies proper behaviour for null and null elements are in proper position in DQueue
+	 * Test case description: Verifies proper behaviour for null and null elements
+	 * are in proper position in DQueue
 	 * Expected output: not "< null null >", "< null null >"
 	 * Bug Report: N\A
 	 */
@@ -339,12 +357,13 @@ class QueueJUnitTest {
 		DQueueSizeOfQueue0();
 	}
 
-	/* 
+	/*
 	 * Test case ECCDE3
 	 * Tester's name: Shriman Vinayagamoorthy
 	 * Test input data: 1,2, null
 	 * Test type: interface, blackbox
-	 * Test case description: Enqueues a null element and also verifies size of queue is of proper size for DQueue
+	 * Test case description: Enqueues a null element and also verifies size of
+	 * queue is of proper size for DQueue
 	 * Expected output: 2, null
 	 * Bug Report: N\A
 	 */
@@ -356,12 +375,13 @@ class QueueJUnitTest {
 		DQueueNullInput();
 	}
 
-	/* 
+	/*
 	 * Test case ECCDE4
 	 * Tester's name: Jason Hillinger
 	 * Test input data: 1,2, 1,99
 	 * Test type: functional & interface, whitebox
-	 * Test case description: Verifies position and if enqueuing a non null element behaves properly
+	 * Test case description: Verifies position and if enqueuing a non null element
+	 * behaves properly
 	 * Expected output: "< 1 2 >", 1
 	 * Bug Report: N\A
 	 */
@@ -373,12 +393,13 @@ class QueueJUnitTest {
 		positionOfInputStart();
 	}
 
-	/* 
+	/*
 	 * Test case ECCDE5
 	 * Tester's name: Shriman Vinayagamoorthy
 	 * Test input data: 1,99, 1,99
 	 * Test type: functional, whitebox
-	 * Test case description:  Verifies if an element is in the front or rear of queue for DQueue
+	 * Test case description: Verifies if an element is in the front or rear of
+	 * queue for DQueue
 	 * Expected output: 1, 99
 	 * Bug Report: N\A
 	 */
@@ -390,12 +411,13 @@ class QueueJUnitTest {
 		positionOfInputRear();
 	}
 
-	/* 
+	/*
 	 * Test case ECCDD1
 	 * Tester's name: Jason Hillinger
 	 * Test input data: 1, null
 	 * Test type: functional & interface, blackbox
-	 * Test case description:  Verifies size of queue when size is 0 after dequeing a null element.
+	 * Test case description: Verifies size of queue when size is 0 after dequeing a
+	 * null element.
 	 * Expected output: 0, null
 	 * Bug Report: N\A
 	 */
@@ -407,17 +429,295 @@ class QueueJUnitTest {
 		dequeueANullelementDQueue();
 	}
 
-	/* 
+	/*
 	 * Test case ECCDD2
 	 * Tester's name: Shriman Vinayagamoorthy
 	 * Test input data: 0,1,2,3,4,5,6,7,8, 1
 	 * Test type: functional & interface, blackbox
-	 * Test case description: Verifies size of queue when size is greater 0 after dequeing a non element.
+	 * Test case description: Verifies size of queue when size is greater 0 after
+	 * dequeing a non element.
 	 * Expected output: 8, 1
 	 * Bug Report: N\A
 	 */
 	@Test
 	public void ECCDD2() {
+		// DDT2
+		sizeOfQueueGreaterThan0DQueue();
+		// DDT4
+		dequeueANonNullelementDQueue();
+	}
+
+	// BCC combinations
+	@Test
+	public void BCC_B_AE() {
+		// AET1
+		testForNullInputEnqueue();
+		// AET4
+		enqueueToTheRearOfAQueue();
+		// AET6
+		enqueueAnAQueueNullArray();
+		// AET8
+		enqueueLessElementsThanMaxSizeAQueue();
+	}
+
+	@Test
+	public void BCC_AE1() {
+		// AET2
+		testForNotNullInputEnqueue();
+		// AET4
+		enqueueToTheRearOfAQueue();
+		// AET6
+		enqueueAnAQueueNullArray();
+		// AET8
+		enqueueLessElementsThanMaxSizeAQueue();
+	}
+
+	@Test
+	public void BCC_AE2() {
+		// AET1
+		testForNullInputEnqueue();
+		// AET3
+		testCurrentPositionInsert();
+		// AET6
+		enqueueAnAQueueNullArray();
+		// AET8
+		enqueueLessElementsThanMaxSizeAQueue();
+	}
+
+	@Test
+	public void BCC_AE3() {
+		// AET1
+		testForNullInputEnqueue();
+		// AET5
+		enqueueAnAQueueWithSpace();
+		// AET6
+		enqueueAnAQueueNullArray();
+		// AET8
+		enqueueLessElementsThanMaxSizeAQueue();
+	}
+
+	@Test
+	public void BCC_AE4() {
+		// AET1
+		testForNullInputEnqueue();
+		// AET4
+		enqueueToTheRearOfAQueue();
+		// AET7
+		enqueueAnAQueueWithNullArray();
+		// AET8
+		enqueueLessElementsThanMaxSizeAQueue();
+	}
+
+	@Test
+	public void BCC_AE5() {
+		// AET1
+		testForNullInputEnqueue();
+		// AET4
+		enqueueToTheRearOfAQueue();
+		// AET6
+		enqueueAnAQueueNullArray();
+		// AET9
+		enqueueEqualElementsToMaxSizeAQueue();
+	}
+
+	@Test
+	public void BCC_B_AD() {
+		// ADT1
+		dequeueANullElementAQueue();
+		// ADT3
+		dequeueFromEmptyAQueue();
+	}
+
+	@Test
+	public void BCC_AD1() {
+		// ADT2
+		dequeueANonNullElementAQueue();
+		// ADT3
+		dequeueFromEmptyAQueue();
+	}
+
+	@Test
+	public void BCC_AD2() {
+		// ADT1
+		dequeueANullElementAQueue();
+		// ADT4
+		dequeueANonEmptyAQueue();
+	}
+
+	@Test
+	public void BCC_B_LE() {
+		// LET1
+		testForNullInputLEnqueue();
+		// LET3
+		LEnqueueNotAtRearOfQueue();
+		// LET5
+		LEnqueueAnLQueueWithSize0();
+		// LET7
+		LEnqueueQueueisNotNull();
+	}
+
+	@Test
+	public void BCC_LE1() {
+		// LET2
+		testForNotNullInputLEnqueue();
+		// LET3
+		LEnqueueNotAtRearOfQueue();
+		// LET5
+		LEnqueueAnLQueueWithSize0();
+		// LET7
+		LEnqueueQueueisNotNull();
+	}
+
+	@Test
+	public void BCC_LE2() {
+		// LET1
+		testForNullInputLEnqueue();
+		// LET4
+		LEnqueueAtRearOfQueue();
+		// LET5
+		LEnqueueAnLQueueWithSize0();
+		// LET7
+		LEnqueueQueueisNotNull();
+	}
+
+	@Test
+	public void BCC_LE3() {
+		// LET1
+		testForNullInputLEnqueue();
+		// LET3
+		LEnqueueNotAtRearOfQueue();
+		// LET6
+		LEnqueueAnLQueueWithSizeGreaterThanQueue();
+		// LET7
+		LEnqueueQueueisNotNull();
+	}
+
+	@Test
+	public void BCC_LE4() {
+		// LET1
+		testForNullInputLEnqueue();
+		// LET3
+		LEnqueueNotAtRearOfQueue();
+		// LET5
+		LEnqueueAnLQueueWithSize0();
+		// LET8
+		LEnqueueQueueisNull();
+	}
+
+	@Test
+	public void BCC_B_LD() {
+		// LDT2
+		LDequeueAnElementSize();
+		// LDT4
+		LDequeueSizeAsManyAsElements();
+		// LDT6
+	}
+
+	@Test
+	public void BCC_LD1() {
+		// LDT1
+		LDequeueLength0();
+		// LDT4
+		LDequeueSizeAsManyAsElements();
+		// LDT6
+	}
+
+	@Test
+	public void BCC_LD2() {
+		// LDT2
+		LDequeueAnElementSize();
+		// LDT3
+		LDequeueQueueSize0();
+		// LDT6
+	}
+
+	@Test
+	public void BCC_LD3() {
+		// LDT2
+		LDequeueAnElementSize();
+		// LDT4
+		LDequeueSizeAsManyAsElements();
+		// LDT5
+	}
+
+	@Test
+	public void BCC_B_DE() {
+		// DET2
+		DQueueCheckNotNullQueue();
+		// DET4
+		DQueueSizeOfQueue();
+		// DET6
+		DQueueNotNullInput();
+		// DET8
+		positionOfInputRear();
+	}
+
+	@Test
+	public void BCC_DE1() {
+		// DET1
+		DQueueCheckNullQueue();
+		// DET4
+		DQueueSizeOfQueue();
+		// DET6
+		DQueueNotNullInput();
+		// DET8
+		positionOfInputRear();
+	}
+
+	@Test
+	public void BCC_DE2() {
+		// DET2
+		DQueueCheckNotNullQueue();
+		// DET3
+		DQueueSizeOfQueue0();
+		// DET6
+		DQueueNotNullInput();
+		// DET8
+		positionOfInputRear();
+	}
+
+	@Test
+	public void BCC_DE3() {
+		// DET2
+		DQueueCheckNotNullQueue();
+		// DET4
+		DQueueSizeOfQueue();
+		// DET5
+		DQueueNullInput();
+		// DET8
+		positionOfInputRear();
+	}
+
+	@Test
+	public void BCC_DE4() {
+		// DET2
+		DQueueCheckNotNullQueue();
+		// DET4
+		DQueueSizeOfQueue();
+		// DET6
+		DQueueNotNullInput();
+		// DET7
+		positionOfInputStart();
+	}
+
+	@Test
+	public void BCC_B_DD() {
+		// DDT2
+		sizeOfQueueGreaterThan0DQueue();
+		// DDT3
+		dequeueANullelementDQueue();
+	}
+
+	@Test
+	public void BCC_DD1() {
+		// DDT1
+		sizeOfQueueEqual0DQueue();
+		// DDT3
+		dequeueANullelementDQueue();
+	}
+
+	@Test
+	public void BCC_DD2() {
 		// DDT2
 		sizeOfQueueGreaterThan0DQueue();
 		// DDT4
@@ -512,8 +812,8 @@ class QueueJUnitTest {
 	}
 
 	// Test AET8
-	@Test 
-	public void enqueueLessElementsThanMaxSizeAQueue(){
+	@Test
+	public void enqueueLessElementsThanMaxSizeAQueue() {
 		int maxSize = 5;
 		Q1 = new AQueue<Integer>(maxSize);
 		Q1.enqueue(2);
@@ -523,8 +823,8 @@ class QueueJUnitTest {
 	}
 
 	// Test AET9
-	@Test 
-	public void enqueueEqualElementsToMaxSizeAQueue(){
+	@Test
+	public void enqueueEqualElementsToMaxSizeAQueue() {
 		int maxSize = 5;
 		Q1 = new AQueue<Integer>(maxSize);
 		Q1.enqueue(2);
@@ -565,29 +865,28 @@ class QueueJUnitTest {
 	}
 
 	// Test ADT4
-	@Test 
-	public void dequeueANonEmptyAQueue(){
+	@Test
+	public void dequeueANonEmptyAQueue() {
 		Q1 = new AQueue<Integer>();
 		Q1.enqueue(1);
 		Q1.enqueue(2);
 		assertEquals(1, Q1.dequeue());
 	}
 
-
-/// Lqueue class starts here
+	/// Lqueue class starts here
 
 	// Test LET1
 	@Test
-	public void testForNullInputLEnqueue(){
+	public void testForNullInputLEnqueue() {
 		Q1 = new LQueue<Integer>();
 		Q1.enqueue(null);
 		Q1.enqueue(2);
 		assertEquals(null, Q1.frontValue());
 	}
 
-	// Test LET2 
-	@Test 
-	public void testForNotNullInputLEnqueue(){
+	// Test LET2
+	@Test
+	public void testForNotNullInputLEnqueue() {
 		Q1 = new LQueue<Integer>();
 		Q1.enqueue(55);
 		Q1.enqueue(2);
@@ -595,8 +894,8 @@ class QueueJUnitTest {
 	}
 
 	// Test LET3
-	@Test 
-	public void LEnqueueNotAtRearOfQueue(){
+	@Test
+	public void LEnqueueNotAtRearOfQueue() {
 		Q1 = new LQueue<Integer>();
 		// Enqueuing front element to queue
 		Q1.enqueue(22);
@@ -604,8 +903,8 @@ class QueueJUnitTest {
 	}
 
 	// Test LET4
-	@Test 
-	public void LEnqueueAtRearOfQueue(){
+	@Test
+	public void LEnqueueAtRearOfQueue() {
 		Q1 = new LQueue<Integer>();
 		Q1.enqueue(1);
 		Q1.enqueue(2);
@@ -615,34 +914,33 @@ class QueueJUnitTest {
 		assertEquals(expected, actual);
 	}
 
-
 	// Test LET5
-	@Test 
-	public void LEnqueueAnLQueueWithSize0(){
+	@Test
+	public void LEnqueueAnLQueueWithSize0() {
 		Q1 = new LQueue<Integer>();
-		assertEquals(0,Q1.length());
+		assertEquals(0, Q1.length());
 		// Enqueuing front element to queue
 		Q1.enqueue(22);
 		assertEquals(22, Q1.frontValue());
 	}
 
 	// Test LET6
-	@Test 
-	public void LEnqueueAnLQueueWithSizeGreaterThanQueue(){
+	@Test
+	public void LEnqueueAnLQueueWithSizeGreaterThanQueue() {
 		Q1 = new LQueue<Integer>();
 
 		for (int i = 0; i < 10; i++) {
 			Q1.enqueue(1);
 		}
-		
+
 		Q1.enqueue(2);
-		
+
 		assertEquals("< 1 1 1 1 1 1 1 1 1 1 2 >", Q1.toString());
 	}
 
 	// Test LET7
-	@Test 
-	public void LEnqueueQueueisNotNull(){
+	@Test
+	public void LEnqueueQueueisNotNull() {
 		Q1 = new LQueue<Integer>();
 		Q1.enqueue(1);
 		Q1.enqueue(1);
@@ -650,59 +948,58 @@ class QueueJUnitTest {
 	}
 
 	// Test LET8
-	@Test 
-	public void LEnqueueQueueisNull(){
+	@Test
+	public void LEnqueueQueueisNull() {
 		Q1 = new LQueue<Integer>();
 		Q1.enqueue(null);
 		Q1.enqueue(null);
 		assertEquals("< null null >", Q1.toString());
 	}
-	
 
 	// Test LDT1
-	@Test 
-	public void LDequeueLength0(){
+	@Test
+	public void LDequeueLength0() {
 		Q1 = new LQueue<Integer>();
 		AssertionError exception = Assertions.assertThrows(AssertionError.class, () -> Q1.dequeue());
-		assertEquals("Queue is empty",exception.getMessage());
-		assertEquals(0,Q1.length());
+		assertEquals("Queue is empty", exception.getMessage());
+		assertEquals(0, Q1.length());
 	}
 
 	// Test LDT2
-	@Test 
-	public void LDequeueAnElementSize(){
+	@Test
+	public void LDequeueAnElementSize() {
 		Q1 = new LQueue<Integer>();
 		Q1.enqueue(1);
 		Q1.enqueue(2);
 		Q1.dequeue();
-		assertEquals(1,Q1.length());
+		assertEquals(1, Q1.length());
 	}
 
 	// Test LDT3
-	@Test 
-	public void LDequeueQueueSize0(){
+	@Test
+	public void LDequeueQueueSize0() {
 		Q1 = new LQueue<Integer>();
 		Q1.enqueue(1);
 		Q1.dequeue();
-		assertEquals(0,Q1.length());
+		assertEquals(0, Q1.length());
 	}
 
 	// Test LDT4
-	@Test 
-	public void LDequeueSizeAsManyAsElements(){
+	@Test
+	public void LDequeueSizeAsManyAsElements() {
 		Q1 = new LQueue<Integer>();
 		Q1.enqueue(1);
 		Q1.enqueue(2);
 		Q1.enqueue(3);
 		Q1.dequeue();
-		assertEquals(2,Q1.length());
+		assertEquals(2, Q1.length());
 	}
 
 	// Dqueue starts here
 
 	// Test DET1
-	@Test 
-	public void DQueueCheckNullQueue(){
+	@Test
+	public void DQueueCheckNullQueue() {
 		Q1 = new DQueue<Integer>();
 		Q1.enqueue(null);
 		Q1.enqueue(null);
@@ -710,8 +1007,8 @@ class QueueJUnitTest {
 	}
 
 	// Test DET2
-	@Test 
-	public void DQueueCheckNotNullQueue(){
+	@Test
+	public void DQueueCheckNotNullQueue() {
 		Q1 = new DQueue<Integer>();
 		Q1.enqueue(1);
 		Q1.enqueue(2);
@@ -719,16 +1016,16 @@ class QueueJUnitTest {
 	}
 
 	// Test DET3
-	@Test 
-	public void DQueueSizeOfQueue0(){
+	@Test
+	public void DQueueSizeOfQueue0() {
 		Q1 = new DQueue<Integer>();
 		// Q1.enqueue(1);
 		assertEquals(0, Q1.length());
 	}
 
 	// Test DET4
-	@Test 
-	public void DQueueSizeOfQueue(){
+	@Test
+	public void DQueueSizeOfQueue() {
 		Q1 = new DQueue<Integer>();
 		Q1.enqueue(1);
 		Q1.enqueue(2);
@@ -737,7 +1034,7 @@ class QueueJUnitTest {
 
 	// Test DET5
 	@Test
-	public void DQueueNullInput(){
+	public void DQueueNullInput() {
 		Q1 = new DQueue<Integer>();
 		Q1.enqueue(null);
 		assertEquals(null, Q1.frontValue());
@@ -745,7 +1042,7 @@ class QueueJUnitTest {
 
 	// Test DET6
 	@Test
-	public void DQueueNotNullInput(){
+	public void DQueueNotNullInput() {
 		Q1 = new DQueue<Integer>();
 		Q1.enqueue(1);
 		Q1.enqueue(2);
@@ -753,8 +1050,8 @@ class QueueJUnitTest {
 	}
 
 	// Test DET7
-	@Test 
-	public void positionOfInputStart(){
+	@Test
+	public void positionOfInputStart() {
 		Q1 = new DQueue<Integer>();
 		Q1.enqueue(1);
 		Q1.enqueue(99);
@@ -765,8 +1062,8 @@ class QueueJUnitTest {
 	}
 
 	// Test DET8
-	@Test 
-	public void positionOfInputRear(){
+	@Test
+	public void positionOfInputRear() {
 		Q1 = new DQueue<Integer>();
 		Q1.enqueue(1);
 		Q1.enqueue(99);
@@ -776,9 +1073,9 @@ class QueueJUnitTest {
 		assertEquals(exp[2], act[2]);
 	}
 
-	// Test DDT1 
-	@Test 
-	public void sizeOfQueueEqual0DQueue(){
+	// Test DDT1
+	@Test
+	public void sizeOfQueueEqual0DQueue() {
 		Q1 = new DQueue<Integer>();
 		Q1.enqueue(1);
 		Q1.dequeue();
@@ -786,32 +1083,31 @@ class QueueJUnitTest {
 	}
 
 	// Test DDT2
-	@Test 
-	public void sizeOfQueueGreaterThan0DQueue(){
+	@Test
+	public void sizeOfQueueGreaterThan0DQueue() {
 		Q1 = new DQueue<Integer>();
 		for (int i = 0; i < 9; i++) {
 			Q1.enqueue(1);
 		}
-		
+
 		Q1.dequeue();
 		assertEquals(8, Q1.length());
 	}
 
-	// Test DDT3 
-	@Test 
-	public void dequeueANullelementDQueue(){
+	// Test DDT3
+	@Test
+	public void dequeueANullelementDQueue() {
 		Q1 = new DQueue<Integer>();
 		Q1.enqueue(null);
 		assertEquals(null, Q1.dequeue());
 	}
 
-	// Test DDT4 
-	@Test 
-	public void dequeueANonNullelementDQueue(){
+	// Test DDT4
+	@Test
+	public void dequeueANonNullelementDQueue() {
 		Q1 = new DQueue<Integer>();
 		Q1.enqueue(1);
 		assertEquals(1, Q1.dequeue());
 	}
-	
 
 }
