@@ -156,7 +156,7 @@ class QueueJUnitTest {
 	 * Test case ECCAD1
 	 * Tester's name: Jason Hillinger
 	 * Test input data: null, none
-	 * Test type: functional & interface, blackbox
+	 * Test type: functional, blackbox
 	 * Test case description: Test for proper behaviour of dequeuing a null element or dequeing when there is nothing to dequeue.
 	 * Expected output: null, "Queue is empty"
 	 * Bug Report: N\A
@@ -173,7 +173,7 @@ class QueueJUnitTest {
 	 * Test case ECCAD2
 	 * Tester's name: Shriman Vinayagamoorthy
 	 * Test input data: 22, 1,2
-	 * Test type: functional & interface, blackbox
+	 * Test type: functional, blackbox
 	 * Test case description: Test for proper behaviour of dequeuing a non null element or dequeing when there is an element to dequeue.
 	 * Expected output: 22, 1
 	 * Bug Report: N\A
@@ -190,7 +190,7 @@ class QueueJUnitTest {
 	 * Test case ECCLE1
 	 * Tester's name: Jason Hillinger
 	 * Test input data: null,2, 22
-	 * Test type: functional & interface, blackbox
+	 * Test type: interface, blackbox
 	 * Test case description: Checks for null inputs and position of element in queue for an LQueue()
 	 * Expected output: null, 22
 	 * Bug Report: N\A
@@ -207,7 +207,7 @@ class QueueJUnitTest {
 	 * Test case ECCLE2
 	 * Tester's name: Shriman Vinayagamoorthy
 	 * Test input data: 22, 22
-	 * Test type: functional & interface, blackbox
+	 * Test type: interface, blackbox
 	 * Test case description: Test for proper behaviour enqueueing an element to an queue with size 0. Checks if element is in proper position.
 	 * Expected output: 22, 0,22
 	 * Bug Report: N\A
@@ -224,7 +224,7 @@ class QueueJUnitTest {
 	 * Test case ECCLE3
 	 * Tester's name: Jason Hillinger
 	 * Test input data: null,2, 1,1
-	 * Test type: functional & interface, blackbox
+	 * Test type: interface, blackbox
 	 * Test case description: Test for proper behaviour of enqueuing a null and non null element to LQueue()
 	 * Expected output: null, "< 1 1 >"
 	 * Bug Report: N\A
@@ -241,7 +241,7 @@ class QueueJUnitTest {
 	 * Test case ECCLE4
 	 * Tester's name: Shriman Vinayagamoorthy
 	 * Test input data: 22, 1,2
-	 * Test type: functional & interface, blackbox
+	 * Test type: interface, blackbox
 	 * Test case description: Test for proper behaviour of dequeuing a non null element or dequeing when there is an element to dequeue.
 	 * Expected output: 22, 1
 	 * Bug Report: N\A
@@ -258,7 +258,7 @@ class QueueJUnitTest {
 	 * Test case ECCLE5
 	 * Tester's name: Jason Hillinger
 	 * Test input data: 55,2, null,null
-	 * Test type: functional & interface, blackbox
+	 * Test type: interface, blackbox
 	 * Test case description: Test for proper behaviour of the actual queue when enqueing null and non null elements
 	 * Expected output: 55, "< null null >"
 	 * Bug Report: N\A
@@ -309,7 +309,7 @@ class QueueJUnitTest {
 	 * Test case ECCDE1
 	 * Tester's name: Shriman Vinayagamoorthy
 	 * Test input data: null,null, 1,2
-	 * Test type: functional & interface, blackbox
+	 * Test type: interface, blackbox
 	 * Test case description: Verifies if DQueue enqueues null and non null elements
 	 * Expected output: "< null null >", "< 1 2 >"
 	 * Bug Report: N\A
@@ -326,7 +326,7 @@ class QueueJUnitTest {
 	 * Test case ECCDE2
 	 * Tester's name: Jason Hillinger
 	 * Test input data: 1,2, null,null
-	 * Test type: functional & interface, whitebox
+	 * Test type: interface, whitebox
 	 * Test case description: Verifies proper behaviour for null and null elements are in proper position in DQueue
 	 * Expected output: not "< null null >", "< null null >"
 	 * Bug Report: N\A
@@ -343,7 +343,7 @@ class QueueJUnitTest {
 	 * Test case ECCDE3
 	 * Tester's name: Shriman Vinayagamoorthy
 	 * Test input data: 1,2, null
-	 * Test type: functional & interface, blackbox
+	 * Test type: interface, blackbox
 	 * Test case description: Enqueues a null element and also verifies size of queue is of proper size for DQueue
 	 * Expected output: 2, null
 	 * Bug Report: N\A
@@ -377,7 +377,7 @@ class QueueJUnitTest {
 	 * Test case ECCDE5
 	 * Tester's name: Shriman Vinayagamoorthy
 	 * Test input data: 1,99, 1,99
-	 * Test type: functional & interface, whitebox
+	 * Test type: functional, whitebox
 	 * Test case description:  Verifies if an element is in the front or rear of queue for DQueue
 	 * Expected output: 1, 99
 	 * Bug Report: N\A
