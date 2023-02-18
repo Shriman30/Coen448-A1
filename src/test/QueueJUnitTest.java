@@ -75,6 +75,237 @@ class QueueJUnitTest {
 		enqueueLessElementsThanMaxSizeAQueue();
 	}
 
+	/* 
+	 * Test case ECCAE3
+	 * Tester's name: Jason Hillinger
+	 * Test input data: null , 0,1,2,3,4,5,6,7,8 , 2,3,1
+	 * Test type: functional & interface, blackbox
+	 * Test case description: Tests inserts using enqueue for the AQueue() class to verify proper size of queue.
+	 * Expected output: null, "< 0 1 2 3 4 5 6 7 8 >" , True
+	 * Bug Report: N\A
+	 */
+	@Test
+	public void ECCAE3(){
+		// AET1
+		testForNullInputEnqueue();
+		// AET4
+		enqueueToTheRearOfAQueue();
+		// AET8
+		enqueueLessElementsThanMaxSizeAQueue();
+	}
+
+	/* 
+	 * Test case ECCAE4
+	 * Tester's name: Shriman Vinayagamoorthy
+	 * Test input data: null , 0,1,2,3,4,5,6,7,8,9,10,11,12,99, 2,3,1,4,7
+	 * Test type: functional & interface, blackbox
+	 * Test case description: Tests null inserts using enqueue for the AQueue() class to verify proper size of queue.
+	 * Expected output: null, "< 0 1 2 3 4 5 6 7 8 9 10 11 12 99 >" , True
+	 * Bug Report: N\A
+	 */
+	@Test
+	public void ECCAE4(){
+		// AET1
+		testForNullInputEnqueue();
+		// AET5
+		enqueueAnAQueueWithSpace();
+		// AET9
+		enqueueEqualElementsToMaxSizeAQueue();
+		
+	}
+
+	/* 
+	 * Test case ECCAE5
+	 * Tester's name: Jason Hillinger
+	 * Test input data: 0, null,null, 2,3,1
+	 * Test type: functional & interface, blackbox
+	 * Test case description: Tests null inserts using enqueue for the AQueue() class to verify proper size of queue with proper indexing of queue.
+	 * Expected output: 0, "< null null >", true
+	 * Bug Report: N\A
+	 */
+	@Test
+	public void ECCAE5(){
+		// AET3
+		testCurrentPositionInsert();
+		// AET7
+		enqueueAnAQueueWithNullArray();
+		// AET8
+		enqueueLessElementsThanMaxSizeAQueue();
+	}
+
+	/* 
+	 * Test case ECCAE6
+	 * Tester's name: Shriman Vinayagamoorthy
+	 * Test input data: 0, null,null,null 2,3,1
+	 * Test type: functional & interface, blackbox
+	 * Test case description: Tests null inserts for String & Integer type using enqueue for the AQueue() class to verify proper size of queue with proper indexing of queue.
+	 * Expected output: 0, "< null null null >", true
+	 * Bug Report: N\A
+	 */
+	@Test
+	public void ECCAE6(){
+		// AET3
+		testCurrentPositionInsert();
+		// AET6
+		enqueueAnAQueueNullArray();
+		// AET8
+		enqueueLessElementsThanMaxSizeAQueue();
+	}
+
+	/* 
+	 * Test case ECCAD1
+	 * Tester's name: Jason Hillinger
+	 * Test input data: null, none
+	 * Test type: functional & interface, blackbox
+	 * Test case description: Test for proper behaviour of dequeuing a null element or dequeing when there is nothing to dequeue.
+	 * Expected output: null, "Queue is empty"
+	 * Bug Report: N\A
+	 */
+	@Test
+	public void ECCAD1(){
+		// ADT1
+		dequeueANullElementAQueue();
+		// ADT3
+		dequeueFromEmptyAQueue();
+	}
+
+	/* 
+	 * Test case ECCAD2
+	 * Tester's name: Shriman Vinayagamoorthy
+	 * Test input data: 22, 1,2
+	 * Test type: functional & interface, blackbox
+	 * Test case description: Test for proper behaviour of dequeuing a non null element or dequeing when there is an element to dequeue.
+	 * Expected output: 22, 1
+	 * Bug Report: N\A
+	 */
+	@Test
+	public void ECCAD2(){
+		// ADT2
+		dequeueANonNullElementAQueue();
+		// ADT4
+		dequeueANonEmptyAQueue();
+	}
+
+	/* 
+	 * Test case ECCLE1
+	 * Tester's name: Jason Hillinger
+	 * Test input data: null,2, 22
+	 * Test type: functional & interface, blackbox
+	 * Test case description: Checks for null inputs and position of element in queue for an LQueue()
+	 * Expected output: null, 22
+	 * Bug Report: N\A
+	 */
+	@Test
+	public void ECCLE1() {
+		// LET1
+		testForNullInputLEnqueue();
+		// LET3
+		LEnqueueNotAtRearOfQueue();
+	}
+
+	/* 
+	 * Test case ECCLE2
+	 * Tester's name: Shriman Vinayagamoorthy
+	 * Test input data: 22, 22
+	 * Test type: functional & interface, blackbox
+	 * Test case description: Test for proper behaviour enqueueing an element to an queue with size 0. Checks if element is in proper position.
+	 * Expected output: 22, 0,22
+	 * Bug Report: N\A
+	 */
+	@Test
+	public void ECCLE2() {
+		// LET3
+		LEnqueueNotAtRearOfQueue();
+		// LET5
+		LEnqueueAnLQueueWithSize0();
+	}
+
+	/* 
+	 * Test case ECCLE3
+	 * Tester's name: Jason Hillinger
+	 * Test input data: null,2, 1,1
+	 * Test type: functional & interface, blackbox
+	 * Test case description: Test for proper behaviour of enqueuing a null and non null element to LQueue()
+	 * Expected output: null, "< 1 1 >"
+	 * Bug Report: N\A
+	 */
+	@Test
+	public void ECCLE3() {
+		// LET1
+		testForNullInputLEnqueue();
+		// LET7
+		LEnqueueQueueisNotNull();
+	}
+
+	/* 
+	 * Test case ECCLE4
+	 * Tester's name: Shriman Vinayagamoorthy
+	 * Test input data: 22, 1,2
+	 * Test type: functional & interface, blackbox
+	 * Test case description: Test for proper behaviour of dequeuing a non null element or dequeing when there is an element to dequeue.
+	 * Expected output: 22, 1
+	 * Bug Report: N\A
+	 */
+	@Test
+	public void ECCLE4() {
+		// LET4
+		LEnqueueAtRearOfQueue();
+		// LET6
+		LEnqueueAnLQueueWithSizeGreaterThanQueue();
+	}
+
+	/* 
+	 * Test case ECCLE5
+	 * Tester's name: Jason Hillinger
+	 * Test input data: 55,2, null,null
+	 * Test type: functional & interface, blackbox
+	 * Test case description: Test for proper behaviour of the actual queue when enqueing null and non null elements
+	 * Expected output: 55, "< null null >"
+	 * Bug Report: N\A
+	 */
+	@Test
+	public void ECCLE5() {
+		// LET2
+		testForNotNullInputLEnqueue();
+		// LET8
+		LEnqueueQueueisNull();
+	}
+
+	/* 
+	 * Test case ECCLD1
+	 * Tester's name: Shriman Vinayagamoorthy
+	 * Test input data: none, 1
+	 * Test type: functional & interface, blackbox
+	 * Test case description: Checks for LQueue() dequeing an element when there is no element to dequeue, while verifying the size of the queue. Then enqueues element then dequeus element and verifies size of queue to be 0
+	 * Expected output: "Queue is empty",0, 0
+	 * Bug Report: N\A
+	 */
+	@Test
+	public void ECCLD1() {
+		// LDT1
+		LDequeueLength0();
+		// LDT3
+		LDequeueQueueSize0();
+	}
+
+	/* 
+	 * Test case ECCLD2
+	 * Tester's name: Jason Hillinger
+	 * Test input data: 1,2, 1,2,3
+	 * Test type: functional & interface, blackbox
+	 * Test case description: Verifies the length of a LQueue after dequeueing an element with different sizes of length of elements
+	 * Expected output: 1, 2
+	 * Bug Report: N\A
+	 */
+	@Test
+	public void ECCLD2() {
+		// LDT2
+		LDequeueAnElementSize();
+		// LDT4
+		LDequeueSizeAsManyAsElements();
+	}
+	
+
 	// Aqueue starts here
 
 	// Test AET1
