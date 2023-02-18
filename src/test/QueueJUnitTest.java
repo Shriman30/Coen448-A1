@@ -305,7 +305,124 @@ class QueueJUnitTest {
 		LDequeueSizeAsManyAsElements();
 	}
 	
+	/* 
+	 * Test case ECCDE1
+	 * Tester's name: Shriman Vinayagamoorthy
+	 * Test input data: null,null, 1,2
+	 * Test type: functional & interface, blackbox
+	 * Test case description: Verifies if DQueue enqueues null and non null elements
+	 * Expected output: "< null null >", "< 1 2 >"
+	 * Bug Report: N\A
+	 */
+	@Test
+	public void ECCDE1() {
+		// DET1
+		DQueueCheckNullQueue();
+		// DET6
+		DQueueNotNullInput();
+	}
 
+	/* 
+	 * Test case ECCDE2
+	 * Tester's name: Jason Hillinger
+	 * Test input data: 1,2, null,null
+	 * Test type: functional & interface, whitebox
+	 * Test case description: Verifies proper behaviour for null and null elements are in proper position in DQueue
+	 * Expected output: not "< null null >", "< null null >"
+	 * Bug Report: N\A
+	 */
+	@Test
+	public void ECCDE2() {
+		// DET2
+		DQueueCheckNotNullQueue();
+		// DET3
+		DQueueSizeOfQueue0();
+	}
+
+	/* 
+	 * Test case ECCDE3
+	 * Tester's name: Shriman Vinayagamoorthy
+	 * Test input data: 1,2, null
+	 * Test type: functional & interface, blackbox
+	 * Test case description: Enqueues a null element and also verifies size of queue is of proper size for DQueue
+	 * Expected output: 2, null
+	 * Bug Report: N\A
+	 */
+	@Test
+	public void ECCDE3() {
+		// DET4
+		DQueueSizeOfQueue();
+		// DET5
+		DQueueNullInput();
+	}
+
+	/* 
+	 * Test case ECCDE4
+	 * Tester's name: Jason Hillinger
+	 * Test input data: 1,2, 1,99
+	 * Test type: functional & interface, whitebox
+	 * Test case description: Verifies position and if enqueuing a non null element behaves properly
+	 * Expected output: "< 1 2 >", 1
+	 * Bug Report: N\A
+	 */
+	@Test
+	public void ECCDE4() {
+		// DET6
+		DQueueNotNullInput();
+		// DET7
+		positionOfInputStart();
+	}
+
+	/* 
+	 * Test case ECCDE5
+	 * Tester's name: Shriman Vinayagamoorthy
+	 * Test input data: 1,99, 1,99
+	 * Test type: functional & interface, whitebox
+	 * Test case description:  Verifies if an element is in the front or rear of queue for DQueue
+	 * Expected output: 1, 99
+	 * Bug Report: N\A
+	 */
+	@Test
+	public void ECCDE5() {
+		// DET7
+		positionOfInputStart();
+		// DET8
+		positionOfInputRear();
+	}
+
+	/* 
+	 * Test case ECCDD1
+	 * Tester's name: Jason Hillinger
+	 * Test input data: 1, null
+	 * Test type: functional & interface, blackbox
+	 * Test case description:  Verifies size of queue when size is 0 after dequeing a null element.
+	 * Expected output: 0, null
+	 * Bug Report: N\A
+	 */
+	@Test
+	public void ECCDD1() {
+		// DDT1
+		sizeOfQueueEqual0DQueue();
+		// DDT3
+		dequeueANullelementDQueue();
+	}
+
+	/* 
+	 * Test case ECCDD2
+	 * Tester's name: Shriman Vinayagamoorthy
+	 * Test input data: 0,1,2,3,4,5,6,7,8, 1
+	 * Test type: functional & interface, blackbox
+	 * Test case description: Verifies size of queue when size is greater 0 after dequeing a non element.
+	 * Expected output: 8, 1
+	 * Bug Report: N\A
+	 */
+	@Test
+	public void ECCDD2() {
+		// DDT2
+		sizeOfQueueGreaterThan0DQueue();
+		// DDT4
+		dequeueANonNullelementDQueue();
+	}
 	// Aqueue starts here
 
 	// Test AET1
@@ -688,7 +805,7 @@ class QueueJUnitTest {
 		assertEquals(null, Q1.dequeue());
 	}
 
-	// Test DDT3 
+	// Test DDT4 
 	@Test 
 	public void dequeueANonNullelementDQueue(){
 		Q1 = new DQueue<Integer>();
