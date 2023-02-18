@@ -10,6 +10,7 @@ class QueueJUnitTest {
 
 	private ADTQueue<Integer> Q1;
 	private ADTQueue<Integer> Q2;
+	private ADTQueue<String> Q3;
 
 	@BeforeEach
 	void setUp() throws Exception {
@@ -33,6 +34,45 @@ class QueueJUnitTest {
 		assertEquals("< >", Q2.toString());
 		assertEquals("< 10 20 15 >", Q1.toString());
 
+	}
+	// ECC combinations
+
+	/* 
+	 * Test case ECCAE1
+	 * Tester's name: Jason Hillinger
+	 * Test input data: null , 0, 2, 3, 1
+	 * Test type: functional & interface, whitebox
+	 * Test case description: Tests all types of inserts using enqueue for the AQueue() class.
+	 * Expected output: null, 0, True
+	 * Bug Report: N\A
+	 */
+	@Test
+	public void ECCAE1(){
+		// AET1
+		testForNullInputEnqueue();
+		// AET3
+		testCurrentPositionInsert();
+		// AET8
+		enqueueLessElementsThanMaxSizeAQueue();
+	}
+
+	/* 
+	 * Test case ECCAE2
+	 * Tester's name: Shriman Vinayagamoorthy
+	 * Test input data: 22 , 0, 2, 3, 1
+	 * Test type: functional & interface, whitebox
+	 * Test case description: Tests non null inserts using enqueue for the AQueue() class.
+	 * Expected output: 22, 0, True
+	 * Bug Report: N\A
+	 */
+	@Test
+	public void ECCAE2(){
+		// AET2
+		testForNotNullInputEnqueue();
+		// AET3
+		testCurrentPositionInsert();
+		// AET8
+		enqueueLessElementsThanMaxSizeAQueue();
 	}
 
 	// Aqueue starts here
@@ -97,18 +137,12 @@ class QueueJUnitTest {
 
 	// Test AET6
 	@Test
-	public void enqueueAnAQueueWithNoSpace() {
-		int size = 15;
-		Q1 = new AQueue<Integer>(size);
-		for (int i = 0; i < size; i++) {
-			Q1.enqueue(i);
-		}
-		// Saving assertion
-		AssertionError exception = Assertions.assertThrows(AssertionError.class, () -> Q1.enqueue(1));
-		// Converting assertion to string to compare with expected message
-		String actualMessage = exception.getMessage();
-		String expectedMessage = "Queue is full";
-		assertEquals(expectedMessage, actualMessage);
+	public void enqueueAnAQueueNullArray() {
+		Q3 = new AQueue<String>();
+		Q3.enqueue(null);
+		Q3.enqueue(null);
+		Q3.enqueue(null);
+		assertEquals("< null null null >", Q3.toString());
 	}
 
 	// Test AET6
