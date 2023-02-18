@@ -579,7 +579,7 @@ class QueueJUnitTest {
 	 * Test case BCC_B_AD
 	 * Tester's name: Jason Hillinger
 	 * Test input data: null, none
-	 * Test type: functional & interface, blackbox
+	 * Test type: functional, blackbox
 	 * Test case description: dequeues a null element and checks if dequeueing an element that is not there returns the assert message.
 	 * Expected output: null, "Queue is empty"
 	 * Bug Report: N\A
@@ -596,7 +596,7 @@ class QueueJUnitTest {
 	 * Test case BCC_AD1
 	 * Tester's name: Shriman Vinayagamoorthy
 	 * Test input data: 22 none
-	 * Test type: functional & interface, blackbox
+	 * Test type: functional, blackbox
 	 * Test case description: dequeues a non null element and checks if dequeueing an element that is not there returns the assert message.
 	 * Expected output: 22, "Queue is empty"
 	 * Bug Report: N\A
@@ -613,7 +613,7 @@ class QueueJUnitTest {
 	 * Test case BCC_AD2
 	 * Tester's name: Jason Hillinger
 	 * Test input data: null, 1 2
-	 * Test type: functional & interface, blackbox
+	 * Test type: functional, blackbox
 	 * Test case description: dequeus a null element and checks if size of queue is non zero
 	 * Expected output: null, 1
 	 * Bug Report: N\A
