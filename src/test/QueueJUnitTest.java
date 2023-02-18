@@ -787,11 +787,10 @@ class QueueJUnitTest {
 	/*
 	 * Test case BCC_B_DE
 	 * Tester's name: Jason Hillinger
-	 * Test input data: 0,1,2,3,4,5,6,7,8, 1
+	 * Test input data: 1 2, 1 2, 1 2, 1 99
 	 * Test type: functional & interface, blackbox
-	 * Test case description: Verifies size of queue when size is greater 0 after
-
-	 * Expected output: 8, 1
+	 * Test case description: Verifies that inputs into DQueue is not null when they are not null, the size of the queue, and the indexing of the queue
+	 * Expected output: not "< null null >", 2, "< 1 2 >", 99
 	 * Bug Report: N\A
 	 */
 	@Test
@@ -809,11 +808,10 @@ class QueueJUnitTest {
 	/*
 	 * Test case BCC_DE1
 	 * Tester's name: Shriman Vinayagamoorthy
-	 * Test input data: 0,1,2,3,4,5,6,7,8, 1
+	 * Test input data: null null, 1 2, 1 2, 1 99
 	 * Test type: functional & interface, blackbox
-	 * Test case description: Verifies size of queue when size is greater 0 after
-
-	 * Expected output: 8, 1
+	 * Test case description: Checks if null elements enqueue properly, checks size of queue, enqueues not null elements, and checks positioning of elements in rear of queue
+	 * Expected output: "< null null >", 2, "< 1 2 >", 99
 	 * Bug Report: N\A
 	 */
 	@Test
@@ -831,11 +829,10 @@ class QueueJUnitTest {
 	/*
 	 * Test case BCC_DE2
 	 * Tester's name: Jason Hillinger
-	 * Test input data: 0,1,2,3,4,5,6,7,8, 1
+	 * Test input data: 1 2, none, 1 2, 1 99
 	 * Test type: functional & interface, blackbox
-	 * Test case description: Verifies size of queue when size is greater 0 after
-
-	 * Expected output: 8, 1
+	 * Test case description: Equeues multiple non null elements, checks size of a queue with size 0 before enqueuing anything, checks indexing of elements including the rear element.
+	 * Expected output: not "< null null >", 0, "< 1 2 >", 99
 	 * Bug Report: N\A
 	 */
 	@Test
@@ -853,11 +850,10 @@ class QueueJUnitTest {
 	/*
 	 * Test case BCC_DE3
 	 * Tester's name: Shriman Vinayagamoorthy
-	 * Test input data: 0,1,2,3,4,5,6,7,8, 1
+	 * Test input data: 1 2, 1 2, null, 1 99
 	 * Test type: functional & interface, blackbox
-	 * Test case description: Verifies size of queue when size is greater 0 after
-
-	 * Expected output: 8, 1
+	 * Test case description: Verifies non null elements being enqueued behave properly, and null elements and the positioning of an element at the rear of the queue.
+	 * Expected output: not "< null null >", 2, null, 99
 	 * Bug Report: N\A
 	 */
 	@Test
@@ -875,11 +871,10 @@ class QueueJUnitTest {
 	/*
 	 * Test case BCC_DE4
 	 * Tester's name: Jason Hillinger
-	 * Test input data: 0,1,2,3,4,5,6,7,8, 1
+	 * Test input data: 1 2, 1 2, 1 2, 1 99
 	 * Test type: functional & interface, blackbox
-	 * Test case description: Verifies size of queue when size is greater 0 after
-
-	 * Expected output: 8, 1
+	 * Test case description: Verifies enqueue non null elements, the indexing of elements and the size of the queue.
+	 * Expected output: not "< null null >", 2, "< 1 2 >", 1
 	 * Bug Report: N\A
 	 */
 	@Test
@@ -897,11 +892,10 @@ class QueueJUnitTest {
 	/*
 	 * Test case BCC_B_DD
 	 * Tester's name: Shriman Vinayagamoorthy
-	 * Test input data: 0,1,2,3,4,5,6,7,8, 1
+	 * Test input data: 0,1,2,3,4,5,6,7,8, null
 	 * Test type: functional & interface, blackbox
-	 * Test case description: Verifies size of queue when size is greater 0 after
-
-	 * Expected output: 8, 1
+	 * Test case description: Verifies size of queue when size is greater 0, then verifies if dequeueing a null element
+	 * Expected output: 8, null
 	 * Bug Report: N\A
 	 */
 	@Test
@@ -915,11 +909,10 @@ class QueueJUnitTest {
 	/*
 	 * Test case BCC_DD1
 	 * Tester's name: Jason Hillinger
-	 * Test input data: 0,1,2,3,4,5,6,7,8, 1
+	 * Test input data: 1, null
 	 * Test type: functional & interface, blackbox
-	 * Test case description: Verifies size of queue when size is greater 0 after
-
-	 * Expected output: 8, 1
+	 * Test case description: Verifies size of queue after dequeing an element, also checks if dequeing a null element behave properly
+	 * Expected output: 0, null
 	 * Bug Report: N\A
 	 */
 	@Test
@@ -935,8 +928,7 @@ class QueueJUnitTest {
 	 * Tester's name: Shriman Vinayagamoorthy
 	 * Test input data: 0,1,2,3,4,5,6,7,8, 1
 	 * Test type: functional & interface, blackbox
-	 * Test case description: Verifies size of queue when size is greater 0 after
-
+	 * Test case description: Verifies size of queue when size is greater 0. checks if dequeing a non null element returns correct element
 	 * Expected output: 8, 1
 	 * Bug Report: N\A
 	 */
