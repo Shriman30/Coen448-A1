@@ -37,7 +37,7 @@ class QueueJUnitTest {
 
 	// New test iteration 1million
 
-	// Test AEnq_T1
+	// Test AET1
 	@Test
 	public void testForNullInputEnqueue() {
 		ADTQueue<Integer> AQ = new AQueue<Integer>();
@@ -45,7 +45,7 @@ class QueueJUnitTest {
 		assertEquals(null, AQ.frontValue());
 	}
 
-	// Test AEnq_T2
+	// Test AET2
 	@Test
 	public void testForNotNullInputEnqueue() {
 		ADTQueue<Integer> AQ = new AQueue<Integer>();
@@ -54,28 +54,34 @@ class QueueJUnitTest {
 		assertEquals("< 22 >", AQ.toString());
 	}
 
-	// Test AEnq_T3
+	// Test AET3
 	@Test
 	public void testCurrentPositionInsert() {
 		Q1 = new AQueue<Integer>();
 		// Enqueuing front element to queue
-		Q1.enqueue(22);
-		assertEquals(22, Q1.frontValue());
+		Q1.enqueue(0);
+		assertEquals(0, Q1.frontValue());
 	}
 
-	// Test AEnq_T4
+	// Test AET4
 	@Test
 	public void enqueueToTheRearOfAQueue() {
 		Q1 = new AQueue<Integer>();
+		Q1.enqueue(0);
 		Q1.enqueue(1);
 		Q1.enqueue(2);
 		Q1.enqueue(3);
-		String expected = "< 1 2 3 >";
+		Q1.enqueue(4);
+		Q1.enqueue(5);
+		Q1.enqueue(6);
+		Q1.enqueue(7);
+		Q1.enqueue(8);
+		String expected = "< 0 1 2 3 4 5 6 7 8 >";
 		String actual = Q1.toString();
 		assertEquals(expected, actual);
 	}
 
-	// Test AEnq_T5
+	// Test AET5
 	@Test
 	public void enqueueAnAQueueWithSpace() {
 		int size = 15;
@@ -89,7 +95,7 @@ class QueueJUnitTest {
 		assertEquals("< 0 1 2 3 4 5 6 7 8 9 10 11 12 99 >", Q1.toString());
 	}
 
-	// Test AEnq_T6
+	// Test AET6
 	@Test
 	public void enqueueAnAQueueWithNoSpace() {
 		int size = 15;
@@ -103,6 +109,48 @@ class QueueJUnitTest {
 		String actualMessage = exception.getMessage();
 		String expectedMessage = "Queue is full";
 		assertEquals(expectedMessage, actualMessage);
+	}
+
+	// Test AET6
+	@Test
+	public void enqueueAnAQueueWithNotNullArray() {
+		Q1 = new AQueue<Integer>();
+		Q1.enqueue(1);
+		Q1.enqueue(2);
+		assertNotEquals(null, Q1.toString());
+	}
+
+	// Test AET7
+	@Test
+	public void enqueueAnAQueueWithNullArray() {
+		Q1 = new AQueue<Integer>();
+		Q1.enqueue(null);
+		Q1.enqueue(null);
+		assertEquals("< null null >", Q1.toString());
+	}
+
+	// Test AET8
+	@Test 
+	public void enqueueLessElementsThanMaxSizeAQueue(){
+		int maxSize = 5;
+		Q1 = new AQueue<Integer>(maxSize);
+		Q1.enqueue(2);
+		Q1.enqueue(3);
+		Q1.enqueue(1);
+		assertTrue(Q1.length() < maxSize);
+	}
+
+	// Test AET8
+	@Test 
+	public void enqueueEqualElementsToMaxSizeAQueue(){
+		int maxSize = 5;
+		Q1 = new AQueue<Integer>(maxSize);
+		Q1.enqueue(2);
+		Q1.enqueue(3);
+		Q1.enqueue(1);
+		Q1.enqueue(4);
+		Q1.enqueue(7);
+		assertTrue(Q1.length() == maxSize);
 	}
 
 	// Test ADeqT1
